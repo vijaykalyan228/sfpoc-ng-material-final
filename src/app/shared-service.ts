@@ -13,14 +13,10 @@ export class SharedService {
   cartUpdated$ = this.emitCartUpdate.asObservable();
   productAdded$ = this.emitProductAdded.asObservable();
   // Service message commands
-  println() {
-    console.log("Shared Service Invoked!");
-  }
 
   addToCart(productName:string) {
     if (!this.cart.includes(productName)) {
       this.cart.push(productName);
-      console.log(typeof this.cart);
       this.emitCartUpdate.next(productName);
     }
   }
@@ -30,7 +26,6 @@ export class SharedService {
       if (index > -1) {
          this.cart.splice(index, 1);
       }
-      console.log(this.cart);
     }
   }
 }

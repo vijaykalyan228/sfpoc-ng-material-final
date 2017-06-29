@@ -20,9 +20,12 @@ export class NavbarComponent implements OnDestroy{
         if (!this.cart.includes(item)) {
           this.cart.push(item);
         }
-        this.lblQuote = "Quote - " + this.cart.length;
-        console.log(this.cart);
+        this.updateLblQuote();
     });
+  }
+
+  updateLblQuote(){
+    this.lblQuote = this.cart.length==0?"Quote":"Quote - " + this.cart.length;
   }
 
   ngOnDestroy() {
@@ -31,17 +34,13 @@ export class NavbarComponent implements OnDestroy{
     this.subscription.unsubscribe();
   }
 
-  removeItems(){
-    console.log("invoked!");
-  }
-
   removeItem(item: any){
     if(this.cart.includes(item)){
       var index = this.cart.indexOf(item, 0);
       if (index > -1) {
          this.cart.splice(index, 1);
       }
-      console.log(item+" deleted!");
+      this.updateLblQuote();
     }
     this._sharedService.removeItem(item);
   }
