@@ -1,0 +1,23 @@
+<md-toolbar>
+  <div style="margin:0 auto; height:64px;">
+    <p class="accountName"><b>Roger &amp; Lang Legal</b></p>
+    <p class="quoteId">Quote 32921</p>
+  </div>
+  <div class="divCart">
+    <button md-button [mdMenuTriggerFor]="menu" class="btnCart"><label class="label-nav-quote">{{lblQuote}}</label></button>
+    <md-menu #menu="mdMenu" [overlapTrigger]="false">
+      <div md-menu-item *ngFor="let item of cart">
+        <label>{{item}}</label>
+        <button md-raised-button>Configure</button>
+        <a (click)='removeItems()' md-button ><md-icon>delete</md-icon></a>
+      </div>
+      <div md-menu-item>
+        <button md-button class="btn-nav-select">Add Product</button>
+        <button md-button class="btn-nav-select">Review Quote</button>
+      </div>
+    </md-menu>
+  </div>
+  <div class="div-nav-close">
+    <a class="btn-nav-close"><md-icon>close</md-icon></a>
+  </div>
+</md-toolbar>

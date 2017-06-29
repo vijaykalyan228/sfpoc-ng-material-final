@@ -1,0 +1,36 @@
+.quoteId{
+  text-align: center;
+  font-size: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: lighter;
+}
+.accountName{
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: bolder;
+}
+.btn-nav-select{
+  width: 49%;
+}
+.btn-nav-delete{
+  width: 10%;
+}
+.btn-nav-close{
+  margin:0 auto;
+}
+.div-nav-close{
+  width: 24px;
+  height: 24px;
+}
+.label-nav-quote{
+  font-size: 120%;
+}
+.btnCart{
+  background-color: green;
+  height: 100%;
+}
+.divCart{
+  height: 100%;
+}

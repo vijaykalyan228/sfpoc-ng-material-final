@@ -1,0 +1,28 @@
+<body style="margin-top: 64px;">
+  <!-- <div [hidden]="flag"> -->
+  <div>
+    <!--  | parseJson  -->
+    <div class="container">
+      <div *ngFor="let family of productFamily" class="div-center">
+        <h5><strong>{{family}}</strong></h5>
+        <table class='product-table'>
+          <tr>
+            <span *ngFor="let product of products2">
+              <td *ngIf='product.Family==family'>
+                <md-card class="example-card card black darken-1">
+                  <md-card-content class='card-content'>
+                    <md-card-title>{{product.Name}}</md-card-title>
+                  </md-card-content>
+                  <md-card-actions class='text-center example-card-actions'>
+                    <hr class="hr-btn-separator">
+                    <a class='example-card-actions-color' (click)='addToCart(product.Name)' md-button>Add to Quote</a>
+                  </md-card-actions>
+                </md-card>
+              </td>
+            </span>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
