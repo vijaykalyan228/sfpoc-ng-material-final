@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from "../shared-service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-ctl-ethernet',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CtlEthernetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private _sharedService: SharedService) { }
 
   ngOnInit() {
+  }
+
+  removeItem(){
+    this._sharedService.removeItem("CenturyLink Ethernet");
+    this.router.navigate(['/']);
   }
 
 }

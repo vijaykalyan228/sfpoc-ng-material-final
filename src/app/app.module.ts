@@ -8,7 +8,8 @@ import { ProductCardsComponent } from './product-cards/product-cards.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {routing, appRoutingProviders } from './app.routing';
 
-import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule, MdIconModule, MdCardModule } from '@angular/material';
+import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule,
+   MdIconModule, MdCardModule, MdTabsModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LocationsComponent } from './ctl-ethernet/locations/locations.component';
 import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
@@ -27,7 +28,8 @@ import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
     FormsModule,
     HttpModule,
     routing,
-    MdToolbarModule, MdMenuModule, MdButtonModule, MdIconModule, MdCardModule
+    MdToolbarModule, MdMenuModule, MdButtonModule,
+     MdIconModule, MdCardModule, MdTabsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

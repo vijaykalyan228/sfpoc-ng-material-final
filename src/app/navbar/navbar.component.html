@@ -6,13 +6,14 @@
   <div class="divCart">
     <button md-button [mdMenuTriggerFor]="menu" class="btnCart"><label class="label-nav-quote">{{lblQuote}}</label></button>
     <md-menu #menu="mdMenu" [overlapTrigger]="false">
-      <div *ngFor="let item of cart">
+      <div *ngFor="let item of cart" style="float:center;">
         <label>{{item}}</label>
-        <button md-raised-button>Configure</button>
-        <a style="z-index:10;" (click)='removeItem(item)'><md-icon>delete</md-icon></a>
+        <button md-button [routerLink]="['/ctlethernet']">Configure</button>
+        <a (click)='removeItem(item)'><md-icon>delete</md-icon></a>
+        <!-- <a (click)='removeItem(item); $event.stopPropagation();' md-button><md-icon>delete</md-icon></a> -->
       </div>
-      <div md-menu-item>
-        <button md-button class="btn-nav-select">Add Product</button>
+      <div *ngIf="cart.length>0">
+        <button md-button class="btn-nav-select" [routerLink]="['/']">Add Product</button>
         <button md-button class="btn-nav-select">Review Quote</button>
       </div>
     </md-menu>

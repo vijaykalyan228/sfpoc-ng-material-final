@@ -1,6 +1,8 @@
 body{
   /*background: url("http://www.moutaiclub.com.cn/mthapistage/jsp/webscan/images/webbg.jpg") 100% 100%;*/
   background: url("http://orig01.deviantart.net/af08/f/2013/319/4/9/blur_by_deragon2-d6ubdf2.png") 100% 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .example-card {

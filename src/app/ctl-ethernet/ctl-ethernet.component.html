@@ -1,60 +1,40 @@
-<div class="container-fluid">
-  <div class="col-xs-1 col-lg-2"></div>
-  <div class="col-xs-10 col-lg-8">
-      <table width="100%">
-        <tr>
-          <td width="70%">
-            <label>CenturyLink Ethernet</label>
-            <br />
-            <br />
-            <small>term</small>
-            <br/>
-            <label class="radio-inline">
-              <input type="checkbox" name="radio"> 1 year
+<div class="container">
+  <table width="100%">
+    <tr>
+      <td width="70%">
+        <label style="font-size: 150%;">CenturyLink Ethernet</label>
+        <br />
+        <br />
+        <small>term</small>
+        <br/>
+        <label class="radio-inline">
+              <input type="radio" name="radio"> 1 year
             </label>
-            <label class="radio-inline">
-              <input type="checkbox" name="radio"> 2 years
+        <label class="radio-inline">
+              <input type="radio" name="radio"> 2 years
             </label>
-            <label class="radio-inline">
-              <input type="checkbox" name="radio"> 3 years
+        <label class="radio-inline">
+              <input type="radio" name="radio"> 3 years
             </label>
-            <label class="radio-inline">
-              <input type="checkbox" name="radio"> 5 years
+        <label class="radio-inline">
+              <input type="radio" name="radio"> 5 years
             </label>
-          </td>
-          <td width="15%">
-            <label>one time</label>
-            <p>$2000.00</p>
-            <label>discount total</label>
-            <p>$0.00</p>
-            <p>0%</p>
-          </td>
-          <td width="15%">
-            <label>monthly</label>
-            <p>$3210.00</p>
-            <label>discount total</label>
-            <p>$0.00</p>
-            <p>0%</p>
-          </td>
-        </tr>
-      </table>
+      </td>
+    </tr>
+  </table>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <small>Configurations</small>
-    <hr>
-    <div class="configPane">
-      <ce-locations></ce-locations>
-
-      <br><br><br><br>
-
-      <div class="btnDivFooter">
-        <button type="button" class="btn btn-default btnFooter">Remove Item</button>
-        <button type="button" class="btn btnFooter">Review Quote</button>
-      </div>
-    </div>
-    <div class="col-xs-1 col-lg-2"></div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <small>Configurations</small>
+  <hr>
+  <div>
+    <ce-locations></ce-locations>
+    <br><br><br><br>
+  </div>
+  <div class="btnDivFooter">
+    <button md-raised-button (click)="removeItem()">Remove Item</button>
+    <button md-raised-button class="disabled">Review Quote</button>
   </div>
 </div>

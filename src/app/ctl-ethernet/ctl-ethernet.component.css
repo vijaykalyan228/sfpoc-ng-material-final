@@ -1,0 +1,24 @@
+.container{
+  padding-left: 12%;
+  /*margin-left: 3%;*/
+  padding-right: 12%;
+  padding-top: 5%;
+}
+.btnDivFooter{
+  position: fixed;
+  bottom: 1px;
+  z-index: 10;
+  width: 72%;
+  text-align: center;
+  overflow: hidden;
+  background-color: white;
+}
+.btnDivFooter button{
+  width: 35%;
+  background-color: white;
+  color: black;
+}
+.disabled{
+  background-color: grey !important;
+  color: white;
+}

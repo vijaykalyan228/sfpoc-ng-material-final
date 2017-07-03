@@ -12,4 +12,8 @@ export class LocationsComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  addLocations(){
+      console.log("Locations added to Quote.");
+  }
 }

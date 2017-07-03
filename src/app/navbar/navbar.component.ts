@@ -7,10 +7,11 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnDestroy{
+export class NavbarComponent implements OnDestroy {
 
   cart: any[] = [];
   subscription: Subscription;
+  delSubscription: Subscription;
   lblQuote: string = "Quote";
 
   constructor(private _sharedService: SharedService) {
@@ -21,11 +22,22 @@ export class NavbarComponent implements OnDestroy{
           this.cart.push(item);
         }
         this.updateLblQuote();
-    });
+      });
+
+    this.delSubscription = this._sharedService.productRemoved$.subscribe(
+      item => {
+        if (this.cart.includes(item)) {
+          var index = this.cart.indexOf(item, 0);
+          if (index > -1) {
+            this.cart.splice(index, 1);
+          }
+          this.updateLblQuote();
+        }
+      });
   }
 
-  updateLblQuote(){
-    this.lblQuote = this.cart.length==0?"Quote":"Quote - " + this.cart.length;
+  updateLblQuote() {
+    this.lblQuote = this.cart.length == 0 ? "Quote" : "Quote - " + this.cart.length;
   }
 
   ngOnDestroy() {
@@ -34,14 +46,8 @@ export class NavbarComponent implements OnDestroy{
     this.subscription.unsubscribe();
   }
 
-  removeItem(item: any){
-    if(this.cart.includes(item)){
-      var index = this.cart.indexOf(item, 0);
-      if (index > -1) {
-         this.cart.splice(index, 1);
-      }
-      this.updateLblQuote();
-    }
+  removeItem(item: any) {
     this._sharedService.removeItem(item);
   }
+
 }
