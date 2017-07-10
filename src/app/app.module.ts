@@ -9,10 +9,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {routing, appRoutingProviders } from './app.routing';
 
 import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule,
-   MdIconModule, MdCardModule, MdTabsModule } from '@angular/material';
+   MdIconModule, MdCardModule, MdTabsModule, MdSelectModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LocationsComponent } from './ctl-ethernet/locations/locations.component';
 import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
+import { ConfigComponent } from './ctl-ethernet/config/config.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
     ProductCardsComponent,
     NavbarComponent,
     LocationsComponent,
-    CtlEthernetComponent
+    CtlEthernetComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
     HttpModule,
     routing,
     MdToolbarModule, MdMenuModule, MdButtonModule,
-     MdIconModule, MdCardModule, MdTabsModule
+     MdIconModule, MdCardModule, MdTabsModule, MdSelectModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

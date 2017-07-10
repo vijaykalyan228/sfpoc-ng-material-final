@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import {MdTabsModule} from '@angular/material';
+import { CtlEthernetSharedService } from "../ctl-ethernet.shared-service";
 
 @Component({
   selector: 'ce-locations',
@@ -8,12 +9,13 @@ import {MdTabsModule} from '@angular/material';
 })
 export class LocationsComponent implements OnInit {
 
-  constructor() {
+  constructor(private ceService: CtlEthernetSharedService) {
   }
 
   ngOnInit() { }
 
   addLocations(){
       console.log("Locations added to Quote.");
+      this.ceService.updateView("locationsFlag");
   }
 }

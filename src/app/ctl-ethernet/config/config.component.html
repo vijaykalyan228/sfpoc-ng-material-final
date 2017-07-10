@@ -1,0 +1,30 @@
+<label>EVC</label>
+<br><br>
+<md-select placeholder="type">
+  <md-option *ngFor="let type of types" [value]="type.value">
+    {{ type.value }}
+  </md-option>
+</md-select>
+
+<md-select placeholder="bandwidth">
+  <md-option *ngFor="let iter of bandwidth" [value]="iter.value">
+    {{ iter.value }}
+  </md-option>
+</md-select>
+
+<md-select placeholder="geography">
+  <md-option *ngFor="let iter of geography" [value]="iter.value">
+    {{ iter.value }}
+  </md-option>
+</md-select>
+
+<hr>
+
+<div>
+  <br>
+  <label><b>3 Locations</b></label>
+  <br><br>
+  <div style="text-align: center;">
+    <img src="http://lorempixel.com/1010/200/" alt="google maps">
+  </div>
+</div>

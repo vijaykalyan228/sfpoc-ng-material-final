@@ -30,7 +30,8 @@
   <small>Configurations</small>
   <hr>
   <div>
-    <ce-locations></ce-locations>
+    <ce-locations *ngIf="locationsFlag"></ce-locations>
+    <ce-config [ctlEthernet]="ctlEthernet"></ce-config>
     <br><br><br><br>
   </div>
   <div class="btnDivFooter">
