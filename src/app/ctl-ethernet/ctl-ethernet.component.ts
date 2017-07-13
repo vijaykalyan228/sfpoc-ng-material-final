@@ -25,7 +25,8 @@ export class CtlEthernetComponent implements OnInit {
          item => {
            switch(item){
              case "locationsFlag":{
-               this.locationsFlag = false;
+               this.locationsFlag = !this.locationsFlag;
+               console.log("locationsFlag");
                break;
              }
            }

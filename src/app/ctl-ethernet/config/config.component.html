@@ -27,4 +27,44 @@
   <div style="text-align: center;">
     <img src="http://lorempixel.com/1010/200/" alt="google maps">
   </div>
+
+  <md-sidenav-container class="example-container" (click)="sidenav.toggle()">
+    <md-sidenav #sidenav class="example-sidenav" opened="{{opened}}">
+      <md-card (click)="updateConfigLoc('Location 1'); sidenav.toggle();">Location 1</md-card>
+      <md-card (click)="updateConfigLoc('Location 2'); sidenav.toggle();">Location 2</md-card>
+      <md-card (click)="updateConfigLoc('Location 3'); sidenav.toggle();">Location 3</md-card>
+    </md-sidenav>
+
+    <div class="config-container" (click)="sidenav.toggle()">
+      <h3>{{location}}</h3>
+      <label>location configurations</label>
+      <hr style="width: 96%;">
+
+      <md-select placeholder="bandwidth">
+        <md-option *ngFor="let iter of bandwidth" [value]="iter.value">
+          {{ iter.value }}
+        </md-option>
+      </md-select>
+      <br>
+
+      <md-select placeholder="class of service">
+        <md-option>
+          business class
+        </md-option>
+      </md-select>
+      <br>
+
+      <md-select placeholder="build out">
+        <md-option>
+          Yes
+        </md-option>
+        <md-option>
+          No
+        </md-option>
+      </md-select>
+      <br>
+
+      <md-slide-toggle>Reuse</md-slide-toggle>
+    </div>
+  </md-sidenav-container>
 </div>

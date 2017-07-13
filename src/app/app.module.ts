@@ -8,8 +8,8 @@ import { ProductCardsComponent } from './product-cards/product-cards.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {routing, appRoutingProviders } from './app.routing';
 
-import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule,
-   MdIconModule, MdCardModule, MdTabsModule, MdSelectModule } from '@angular/material';
+import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule, MdSlideToggleModule,
+   MdIconModule, MdCardModule, MdTabsModule, MdSelectModule, MdSidenavModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LocationsComponent } from './ctl-ethernet/locations/locations.component';
 import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
@@ -30,8 +30,8 @@ import { ConfigComponent } from './ctl-ethernet/config/config.component';
     FormsModule,
     HttpModule,
     routing,
-    MdToolbarModule, MdMenuModule, MdButtonModule,
-     MdIconModule, MdCardModule, MdTabsModule, MdSelectModule
+    MdToolbarModule, MdMenuModule, MdButtonModule, MdSidenavModule,
+     MdIconModule, MdCardModule, MdTabsModule, MdSelectModule, MdSlideToggleModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

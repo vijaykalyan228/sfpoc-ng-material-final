@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 import {SharedService} from '../shared-service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-product-cards',
