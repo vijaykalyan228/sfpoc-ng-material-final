@@ -4,7 +4,6 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
   background-color: white;
 }
-
 .example-sidenav-content {
   display: flex;
   height: 100%;
@@ -12,16 +11,40 @@
   justify-content: center;
   text-align: center;
 }
-
 .example-sidenav {
   width: 32%;
 }
-
 .config-container{
-  width: 67%;
   height: 99%;
-  margin-left: 33%;
+  display: inline-block;
+  width: 100%;
+}
+.config-layout{
+  width: 67%;
   background-color: white !important;
   color: black;
   overflow-y: hidden;
+}
+.config-sidenav{
+  width: 32%;
+  float: left;
+}
+.bulkactions-title{
+  font-size: 95%;
+  text-align: center;
+}
+.bulkactions-title-small{
+  text-align: center;
+  font-size: 70%;
+}
+.bulkactions-menu-icon{
+  margin: 0;
+}
+.bulkactions-menu-item{
+  padding: 0;
+  display: inline-block;
+  /*font-size: 24px;*/
+}
+.fill-space {
+  flex: 1 1 auto;
 }

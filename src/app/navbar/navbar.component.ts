@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { SharedService } from "../shared-service";
 import { Subscription } from 'rxjs/Subscription';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnDestroy {
   delSubscription: Subscription;
   lblQuote: string = "Quote";
 
-  constructor(private _sharedService: SharedService) {
+  constructor(private router: Router, private _sharedService: SharedService) {
     // this.subscription = this._sharedService.productAdded$.subscribe(
     this.subscription = this._sharedService.cartUpdated$.subscribe(
       item => {
@@ -48,6 +49,7 @@ export class NavbarComponent implements OnDestroy {
 
   removeItem(item: any) {
     this._sharedService.removeItem(item);
+    this.router.navigate(['/']);
   }
 
 }

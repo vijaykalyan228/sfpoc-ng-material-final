@@ -25,20 +25,62 @@
   <label><b>3 Locations</b></label>
   <br><br>
   <div style="text-align: center;">
-    <img src="http://lorempixel.com/1010/200/" alt="google maps">
+    <config-gmaps></config-gmaps>
   </div>
 
-  <md-sidenav-container class="example-container" (click)="sidenav.toggle()">
-    <md-sidenav #sidenav class="example-sidenav" opened="{{opened}}">
-      <md-card (click)="updateConfigLoc('Location 1'); sidenav.toggle();">Location 1</md-card>
-      <md-card (click)="updateConfigLoc('Location 2'); sidenav.toggle();">Location 2</md-card>
-      <md-card (click)="updateConfigLoc('Location 3'); sidenav.toggle();">Location 3</md-card>
-    </md-sidenav>
 
-    <div class="config-container" (click)="sidenav.toggle()">
+  <div class="config-container">
+    <div class="config-sidenav">
+      <table>
+        <th>
+            <button md-icon-button [mdMenuTriggerFor]="menu">
+              <md-icon>settings</md-icon>
+            </button>
+            <md-menu #menu="mdMenu">
+              <md-card>
+                <md-card-content>
+                  <md-card-title class="bulkactions-title">Bulk Actions</md-card-title>
+                  <md-card-title class="bulkactions-title-small">select and apply changes</md-card-title>
+                </md-card-content>
+                <md-card-actions>
+                  <button md-menu-item class="bulkactions-menu-item">
+                    <span>bandwidth</span>
+                    <span class="fill-space"></span>
+                    <md-icon class="bulkactions-menu-icon">chevron_right</md-icon>
+                  </button>
+                  <button md-menu-item class="bulkactions-menu-item">
+                    <span>class of service</span>
+                    <md-icon class="bulkactions-menu-icon">keyboard_arrow_right</md-icon>
+                  </button>
+                  <button md-menu-item class="bulkactions-menu-item" (click)="doBulkAction('reuse')">
+                    <span>reuse</span>
+                    <md-icon class="bulkactions-menu-icon">keyboard_arrow_right</md-icon>
+                  </button>
+                  <md-card *ngIf="reuseFlag">
+                    <label><b>reuse</b></label>
+                    <br>
+                    <md-slide-toggle ngDefaultControl [(ngModel)]="device"></md-slide-toggle>
+                  </md-card>
+                </md-card-actions>
+              </md-card>
+            </md-menu>
+        </th>
+        <tr>
+          <td (click)="updateConfigLoc('Location 1');"><md-card>Location 1</md-card></td>
+        </tr>
+        <tr>
+          <td (click)="updateConfigLoc('Location 2');"><md-card>Location 2</md-card></td>
+        </tr>
+        <tr>
+          <td (click)="updateConfigLoc('Location 3');"><md-card>Location 3</md-card></td>
+        </tr>
+      </table>
+    </div>
+    <div class="config-layout">
       <h3>{{location}}</h3>
       <label>location configurations</label>
       <hr style="width: 96%;">
+      <br>
 
       <md-select placeholder="bandwidth">
         <md-option *ngFor="let iter of bandwidth" [value]="iter.value">
@@ -66,5 +108,6 @@
 
       <md-slide-toggle>Reuse</md-slide-toggle>
     </div>
-  </md-sidenav-container>
+  </div>
+  <!-- </md-sidenav-container> -->
 </div>

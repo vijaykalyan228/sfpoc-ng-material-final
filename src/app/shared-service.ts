@@ -34,4 +34,7 @@ export class SharedService {
   logCart(){
     console.log(this.cart);
   }
+  getCart(){
+    return this.cart;
+  }
 }

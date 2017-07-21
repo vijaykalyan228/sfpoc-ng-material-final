@@ -1,0 +1,20 @@
+.pricingTable{
+  width: 100%;
+  text-align: left;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.pricingItems{
+  width: 50%;
+}
+.oneTime, .monthly{
+  width: 25%;
+  text-align: center;
+}
+.innerTable{
+  width: 100%;
+  text-align: right;
+}
+.innerTableItems{
+  width: 50%;
+}
