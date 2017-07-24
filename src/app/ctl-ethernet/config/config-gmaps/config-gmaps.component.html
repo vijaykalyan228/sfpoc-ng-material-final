@@ -1,1 +1,5 @@
-<img src="http://lorempixel.com/1010/200/" alt="google maps">
+<!-- <img src="http://lorempixel.com/1010/200/" alt="google maps"> -->
+<agm-map [latitude]="lat" [longitude]="lng" [disableDefaultUI]="true" [zoom]="14"
+  [mapDraggable]="false" [scrollwheel]="false" [zoomControl]="false" [streetViewControl]="false">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigGmapsComponent implements OnInit {
 
+  lat: number = 9.9789914;
+  lng: number = 76.317617;
+
   constructor() { }
 
   ngOnInit() {
