@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CtlEthernetSharedService } from "../../ctl-ethernet.shared-service";
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'config-gmaps',
@@ -7,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigGmapsComponent implements OnInit {
 
-  lat: number = 9.9789914;
-  lng: number = 76.317617;
+  lat: any = 9.9789914;
+  lng: any = 76.317617;
+  subscription: Subscription;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private ceService: CtlEthernetSharedService) {
+      this.subscription = this.ceService.locationUpdated$.subscribe(
+        param => {
+          this.lat = +param[0];
+          this.lng = +param[1];
+      });
   }
+
+  ngOnInit() { }
 
 }

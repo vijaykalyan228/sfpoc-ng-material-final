@@ -7,18 +7,9 @@
         <br />
         <small>term</small>
         <br/>
-        <label class="radio-inline">
-              <input type="radio" name="radio"> 1 year
-            </label>
-        <label class="radio-inline">
-              <input type="radio" name="radio"> 2 years
-            </label>
-        <label class="radio-inline">
-              <input type="radio" name="radio"> 3 years
-            </label>
-        <label class="radio-inline">
-              <input type="radio" name="radio"> 5 years
-            </label>
+        <label class="radio-inline" *ngFor="let term of terms">
+          <input type="radio" name="radio"> {{term}}
+        </label>
       </td>
     </tr>
   </table>

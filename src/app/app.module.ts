@@ -13,6 +13,7 @@ import { CtlEthernetComponent } from './ctl-ethernet/ctl-ethernet.component';
 import { ConfigComponent } from './ctl-ethernet/config/config.component';
 import { QuotePricingComponent } from './quote-pricing/quote-pricing.component';
 import { ConfigGmapsComponent } from './ctl-ethernet/config/config-gmaps/config-gmaps.component';
+import {CeServiceResolver} from "./ctl-ethernet/ctl-ethernet.resolver.shared-service";
 
 import { MdToolbarModule, MdToolbarRow, MdMenuModule, MdButtonModule, MdSlideToggleModule,
    MdIconModule, MdCardModule, MdTabsModule, MdSelectModule, MdSidenavModule } from '@angular/material';
@@ -42,7 +43,7 @@ import { AgmCoreModule } from '@agm/core';
     MdToolbarModule, MdMenuModule, MdButtonModule, MdSidenavModule,
      MdIconModule, MdCardModule, MdTabsModule, MdSelectModule, MdSlideToggleModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, CeServiceResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

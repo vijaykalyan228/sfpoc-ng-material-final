@@ -6,31 +6,24 @@
         <md-tab class="black-text" label="Available">
           <div class="tab-pane fade in active" id="panel1" role="tabpanel">
             <br>
-            <p>Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias.</p>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">Location 1</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">Location 2</label>
-            </div>
-            <div class="checkbox disabled">
-              <label><input type="checkbox" value="">Location 3</label>
+            <!-- <p>Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias.</p> -->
+            <div *ngFor="let loc of locations">
+              <label *ngIf="loc?.available==='true'"><input type="checkbox" value="loc?.address">{{loc?.address}}</label>
             </div>
           </div>
         </md-tab>
         <md-tab class="black-text" label="Unavailable">
           <div class="tab-pane fade" id="panel2" role="tabpanel">
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+            <div *ngFor="let loc of locations">
+              <label *ngIf="loc?.available!=='true'"><input type="checkbox" disabled value="loc?.address">{{loc?.address}}</label>
+            </div>
           </div>
         </md-tab>
       </md-tab-group>
 
     </md-card-content>
-
-    <!-- <md-card-actions class='text-center example-card-actions'>
-      <a class='example-card-actions-color'>Add Locations</a>
-    </md-card-actions> -->
     <button md-raised-button style="width:90%; position: absolute; bottom: 8px;" (click)="addLocations()">Add Locations</button>
   </md-card>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {MdTabsModule} from '@angular/material';
 import { CtlEthernetSharedService } from "../ctl-ethernet.shared-service";
 
@@ -9,13 +10,19 @@ import { CtlEthernetSharedService } from "../ctl-ethernet.shared-service";
 })
 export class LocationsComponent implements OnInit {
 
-  constructor(private ceService: CtlEthernetSharedService) {
+  specs: any[];
+  locations: any[];
+
+  constructor(private ceService: CtlEthernetSharedService, private route: ActivatedRoute) {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.specs = this.route.snapshot.data['ceSpecs'];
+    this.locations = this.specs["locations"];
+  }
 
   addLocations(){
-      console.log("Locations added to Quote.");
+      // console.log("Locations added to Quote.");
       this.ceService.updateView("locationsFlag");
   }
 }

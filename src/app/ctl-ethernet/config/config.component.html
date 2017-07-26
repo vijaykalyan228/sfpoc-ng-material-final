@@ -1,20 +1,20 @@
 <label>EVC</label>
 <br><br>
 <md-select placeholder="type">
-  <md-option *ngFor="let type of types" [value]="type.value">
-    {{ type.value }}
+  <md-option *ngFor="let type of types" [value]="type">
+    {{type}}
   </md-option>
 </md-select>
 
 <md-select placeholder="bandwidth">
-  <md-option *ngFor="let iter of bandwidth" [value]="iter.value">
-    {{ iter.value }}
+  <md-option *ngFor="let iter of bandwidth" [value]="iter">
+    {{ iter }}
   </md-option>
 </md-select>
 
 <md-select placeholder="geography">
-  <md-option *ngFor="let iter of geography" [value]="iter.value">
-    {{ iter.value }}
+  <md-option *ngFor="let iter of geography" [value]="iter">
+    {{ iter }}
   </md-option>
 </md-select>
 
@@ -65,14 +65,8 @@
               </md-card>
             </md-menu>
         </th>
-        <tr>
-          <td (click)="updateConfigLoc('Location 1');"><md-card>Location 1</md-card></td>
-        </tr>
-        <tr>
-          <td (click)="updateConfigLoc('Location 2');"><md-card>Location 2</md-card></td>
-        </tr>
-        <tr>
-          <td (click)="updateConfigLoc('Location 3');"><md-card>Location 3</md-card></td>
+        <tr *ngFor="let location of locations">
+          <td *ngIf="location.available==='true'" (click)="updateConfigLoc(location.address);"><md-card>{{location.address}}</md-card></td>
         </tr>
       </table>
     </div>
@@ -83,8 +77,8 @@
       <br>
 
       <md-select placeholder="bandwidth">
-        <md-option *ngFor="let iter of bandwidth" [value]="iter.value">
-          {{ iter.value }}
+        <md-option *ngFor="let iter of bandwidth" [value]="iter">
+          {{ iter }}
         </md-option>
       </md-select>
       <br>
